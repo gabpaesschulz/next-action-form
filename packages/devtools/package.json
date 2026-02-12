@@ -1,6 +1,6 @@
 {
     "name": "@next-action-form/devtools",
-    "version": "3.0.0",
+    "version": "4.0.0",
     "description": "DevTools panel for next-action-form – inspect form state, submission history, and debug optimistic UI.",
     "keywords": [
         "react-hook-form",

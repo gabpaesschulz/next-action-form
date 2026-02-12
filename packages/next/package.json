@@ -1,6 +1,6 @@
 {
     "name": "@next-action-form/next",
-    "version": "3.0.0",
+    "version": "4.0.0",
     "description": "Next.js adapter for next-action-form – bridges React Hook Form with Server Actions.",
     "keywords": [
         "next.js",

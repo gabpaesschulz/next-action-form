@@ -1,6 +1,6 @@
 {
     "name": "@next-action-form/standalone",
-    "version": "3.0.0",
+    "version": "4.0.0",
     "description": "Standalone React adapter for next-action-form – use the same API without Next.js (Vite, Remix, Astro, SPAs).",
     "keywords": [
         "react",
