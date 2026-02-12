@@ -7,7 +7,9 @@
       "Bash(pnpm dlx madge:*)",
       "Bash(pnpm dlx jscpd:*)",
       "Bash(pnpm turbo build:*)",
-      "Bash(pnpm test:*)"
+      "Bash(pnpm test:*)",
+      "Bash(pnpm add:*)",
+      "Bash(pnpm install:*)"
     ]
   }
 }

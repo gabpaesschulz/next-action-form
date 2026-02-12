@@ -19,14 +19,10 @@ const wizardSchema = z.object({
   }),
 });
 
-export async function wizardAction(
-  prevState: { errors?: Record<string, string[]>; success?: boolean } | null,
-  formData: FormData,
-) {
+export async function wizardAction(data: z.infer<typeof wizardSchema>) {
   await new Promise((r) => setTimeout(r, 1500));
 
-  const raw = Object.fromEntries(formData);
-  const parsed = wizardSchema.safeParse(raw);
+  const parsed = wizardSchema.safeParse(data);
 
   if (!parsed.success) {
     return { errors: parsed.error.flatten().fieldErrors };

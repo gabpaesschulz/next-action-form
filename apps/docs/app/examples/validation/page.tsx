@@ -1,5 +1,7 @@
 import { ValidationForm } from "./validation-form";
 
+export const dynamic = "force-dynamic";
+
 export default function ValidationExamplePage() {
   return (
     <div className="max-w-lg mx-auto px-6 py-16">
@@ -67,17 +69,15 @@ export default function ValidationExamplePage() {
         <div className="code-block text-gray-300">
           <pre>{`'use client'
 import { useActionForm } from 'next-action-form'
-import { withZod } from 'next-action-form/zod'
 import { signupAction, signupSchema } from './actions'
 
-// ✨ withZod attaches the schema → auto client validation
-const validatedAction = withZod(signupSchema, signupAction)
-
 export function SignupForm() {
+  // Same Zod schema used on both client and server
   const { register, handleSubmit, formState: { errors, isPending } } =
-    useActionForm(validatedAction, {
+    useActionForm(signupAction, {
       defaultValues: { username: '', email: '', password: '' },
-      validationMode: 'onChange',  // 'onBlur' | 'onSubmit' also available
+      schema: signupSchema,        // enables client-side validation
+      validationMode: 'onChange',   // 'onBlur' | 'onSubmit' also available
     })
 
   return (

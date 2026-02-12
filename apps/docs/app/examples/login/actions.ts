@@ -7,14 +7,11 @@ const loginSchema = z.object({
   password: z.string().min(8, "Password must be at least 8 characters"),
 });
 
-export async function loginAction(
-  prevState: { errors?: Record<string, string[]>; success?: boolean } | null,
-  formData: FormData,
-) {
+export async function loginAction(data: z.infer<typeof loginSchema>) {
   // Simulate network delay
   await new Promise((r) => setTimeout(r, 1000));
 
-  const parsed = loginSchema.safeParse(Object.fromEntries(formData));
+  const parsed = loginSchema.safeParse(data);
 
   if (!parsed.success) {
     return { errors: parsed.error.flatten().fieldErrors };

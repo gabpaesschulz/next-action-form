@@ -1,19 +1,17 @@
 "use client";
 
 import { useActionForm } from "next-action-form";
-import { withZod } from "next-action-form/zod";
 import { signupAction, signupSchema } from "./actions";
-
-const validatedAction = withZod(signupSchema, signupAction);
 
 export function ValidationForm() {
   const {
     register,
     handleSubmit,
     formState: { errors, isPending, isSubmitSuccessful },
-  } = useActionForm(validatedAction, {
+  } = useActionForm(signupAction, {
     defaultValues: { username: "", email: "", password: "" },
-    // Client-side validation triggers on every change
+    // Pass the schema for client-side validation on every change
+    schema: signupSchema,
     validationMode: "onChange",
   });
 

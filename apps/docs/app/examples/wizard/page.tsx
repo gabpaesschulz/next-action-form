@@ -1,5 +1,7 @@
 import { WizardForm } from "./wizard-form";
 
+export const dynamic = "force-dynamic";
+
 export default function WizardExamplePage() {
   return (
     <div className="max-w-2xl mx-auto px-6 py-16">

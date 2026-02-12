@@ -1,5 +1,7 @@
 import { OptimisticTodoForm } from "./optimistic-todo-form";
 
+export const dynamic = "force-dynamic";
+
 export default function OptimisticExamplePage() {
   return (
     <div className="max-w-lg mx-auto px-6 py-16">

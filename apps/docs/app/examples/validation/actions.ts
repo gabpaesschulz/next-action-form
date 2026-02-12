@@ -16,15 +16,12 @@ export const signupSchema = z.object({
     .regex(/[0-9]/, "Must contain a number"),
 });
 
-export async function signupAction(
-  prevState: { errors?: Record<string, string[]>; success?: boolean } | null,
-  formData: FormData,
-) {
+export async function signupAction(data: z.infer<typeof signupSchema>) {
   // Simulate network delay
   await new Promise((r) => setTimeout(r, 1000));
 
-  const parsed = signupSchema.safeParse(Object.fromEntries(formData));
-
+  // Server-side validation (defense in depth)
+  const parsed = signupSchema.safeParse(data);
   if (!parsed.success) {
     return { errors: parsed.error.flatten().fieldErrors };
   }

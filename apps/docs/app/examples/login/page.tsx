@@ -1,5 +1,7 @@
 import { LoginForm } from "./login-form";
 
+export const dynamic = "force-dynamic";
+
 export default function LoginExamplePage() {
   return (
     <div className="max-w-lg mx-auto px-6 py-16">
@@ -32,10 +34,10 @@ const loginSchema = z.object({
   password: z.string().min(8, 'Min 8 characters'),
 })
 
-export async function loginAction(prevState: any, formData: FormData) {
+export async function loginAction(data: z.infer<typeof loginSchema>) {
   await new Promise(r => setTimeout(r, 1000)) // simulate delay
 
-  const parsed = loginSchema.safeParse(Object.fromEntries(formData))
+  const parsed = loginSchema.safeParse(data)
   if (!parsed.success) {
     return { errors: parsed.error.flatten().fieldErrors }
   }
