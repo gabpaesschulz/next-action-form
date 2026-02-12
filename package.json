@@ -1,5 +1,5 @@
 {
-    "name": "next-action-form-monorepo",
+    "name": "hookform-action-monorepo",
     "private": true,
     "scripts": {
         "build": "turbo build",

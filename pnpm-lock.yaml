@@ -23,15 +23,15 @@ importers:
 
   apps/docs:
     dependencies:
+      hookform-action-core:
+        specifier: workspace:*
+        version: link:../../packages/core
       lucide-react:
         specifier: ^0.468.0
         version: 0.468.0(react@18.3.1)
       next:
         specifier: ^15.1.0
         version: 15.5.12(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      next-action-form:
-        specifier: workspace:*
-        version: link:../../packages/core
       react:
         specifier: ^18.3.1
         version: 18.3.1
@@ -117,7 +117,7 @@ importers:
 
   packages/devtools:
     dependencies:
-      next-action-form:
+      hookform-action-core:
         specifier: workspace:*
         version: link:../core
     devDependencies:
@@ -145,7 +145,7 @@ importers:
 
   packages/next:
     dependencies:
-      next-action-form:
+      hookform-action-core:
         specifier: workspace:*
         version: link:../core
     devDependencies:
@@ -179,7 +179,7 @@ importers:
 
   packages/standalone:
     dependencies:
-      next-action-form:
+      hookform-action-core:
         specifier: workspace:*
         version: link:../core
     devDependencies:

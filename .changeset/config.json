@@ -8,6 +8,6 @@
     "baseBranch": "main",
     "updateInternalDependencies": "patch",
     "ignore": [
-        "@next-action-form/docs"
+        "hookform-action-docs"
     ]
 }

@@ -1,7 +1,7 @@
 {
-    "name": "@next-action-form/devtools",
+    "name": "hookform-action-devtools",
     "version": "4.0.0",
-    "description": "DevTools panel for next-action-form – inspect form state, submission history, and debug optimistic UI.",
+    "description": "DevTools panel for hookform-action – inspect form state, submission history, and debug optimistic UI.",
     "keywords": [
         "react-hook-form",
         "devtools",
@@ -13,7 +13,7 @@
     "author": "",
     "repository": {
         "type": "git",
-        "url": "https://github.com/your-username/next-action-form",
+        "url": "https://github.com/gabpaesschulz/hookform-action",
         "directory": "packages/devtools"
     },
     "main": "./dist/index.js",
@@ -44,7 +44,7 @@
         "check-types": "tsc --noEmit"
     },
     "dependencies": {
-        "next-action-form": "workspace:*"
+        "hookform-action-core": "workspace:*"
     },
     "peerDependencies": {
         "react": "^18.0.0 || ^19.0.0",

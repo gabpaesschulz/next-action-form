@@ -1,7 +1,7 @@
 {
-    "name": "@next-action-form/standalone",
+    "name": "hookform-action-standalone",
     "version": "4.0.0",
-    "description": "Standalone React adapter for next-action-form – use the same API without Next.js (Vite, Remix, Astro, SPAs).",
+    "description": "Standalone React adapter for hookform-action – use the same API without Next.js (Vite, Remix, Astro, SPAs).",
     "keywords": [
         "react",
         "react-hook-form",
@@ -17,7 +17,7 @@
     "author": "",
     "repository": {
         "type": "git",
-        "url": "https://github.com/your-username/next-action-form",
+        "url": "https://github.com/gabpaesschulz/hookform-action",
         "directory": "packages/standalone"
     },
     "main": "./dist/index.js",
@@ -50,7 +50,7 @@
         "check-types": "tsc --noEmit"
     },
     "dependencies": {
-        "next-action-form": "workspace:*"
+        "hookform-action-core": "workspace:*"
     },
     "peerDependencies": {
         "react": "^18.0.0 || ^19.0.0",

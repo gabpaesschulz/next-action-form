@@ -1,11 +1,11 @@
-import type { Metadata } from 'next'
-import './globals.css'
+import type { Metadata } from "next";
+import "./globals.css";
 
 export const metadata: Metadata = {
-  title: 'next-action-form – Docs',
+  title: "hookform-action – Docs",
   description:
-    'Seamless integration between React Hook Form and Next.js Server Actions with Zod validation and multi-step persistence.',
-}
+    "Seamless integration between React Hook Form and Next.js Server Actions with Zod validation and multi-step persistence.",
+};
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -15,7 +15,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
             <a href="/" className="flex items-center gap-2 font-bold text-lg">
               <span className="text-brand-400">⚡</span>
-              <span>next-action-form</span>
+              <span>hookform-action</span>
             </a>
             <div className="flex items-center gap-6 text-sm text-gray-400">
               <a href="/examples/login" className="hover:text-white transition-colors">
@@ -40,7 +40,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 API Reference
               </a>
               <a
-                href="https://github.com/your-username/next-action-form"
+                href="https://github.com/gabpaesschulz/hookform-action"
                 target="_blank"
                 rel="noreferrer noopener"
                 className="hover:text-white transition-colors"
@@ -53,5 +53,5 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main>{children}</main>
       </body>
     </html>
-  )
+  );
 }

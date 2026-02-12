@@ -1,7 +1,7 @@
 {
-    "name": "next-action-form",
+    "name": "hookform-action-core",
     "version": "4.0.0",
-    "description": "Seamless integration between React Hook Form and Next.js Server Actions with Zod validation, automatic type inference, optimistic UI, and multi-step form persistence.",
+    "description": "Seamless integration between React Hook Form and Server Actions with Zod validation, automatic type inference, optimistic UI, and multi-step form persistence.",
     "keywords": [
         "next.js",
         "react-hook-form",
@@ -21,7 +21,7 @@
     "author": "",
     "repository": {
         "type": "git",
-        "url": "https://github.com/your-username/next-action-form"
+        "url": "https://github.com/gabpaesschulz/hookform-action"
     },
     "main": "./dist/index.js",
     "module": "./dist/index.mjs",

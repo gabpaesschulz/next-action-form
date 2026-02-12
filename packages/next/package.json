@@ -1,7 +1,7 @@
 {
-    "name": "@next-action-form/next",
+    "name": "hookform-action",
     "version": "4.0.0",
-    "description": "Next.js adapter for next-action-form – bridges React Hook Form with Server Actions.",
+    "description": "Next.js adapter for hookform-action – bridges React Hook Form with Server Actions.",
     "keywords": [
         "next.js",
         "react-hook-form",
@@ -14,7 +14,7 @@
     "author": "",
     "repository": {
         "type": "git",
-        "url": "https://github.com/your-username/next-action-form",
+        "url": "https://github.com/gabpaesschulz/hookform-action",
         "directory": "packages/next"
     },
     "main": "./dist/index.js",
@@ -45,7 +45,7 @@
         "check-types": "tsc --noEmit"
     },
     "dependencies": {
-        "next-action-form": "workspace:*"
+        "hookform-action-core": "workspace:*"
     },
     "peerDependencies": {
         "next": ">=14.0.0",

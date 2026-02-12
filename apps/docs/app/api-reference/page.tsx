@@ -14,7 +14,7 @@ export default function ApiReferencePage() {
         <h2 className="text-2xl font-bold mb-4 text-brand-400">useActionForm (Next.js)</h2>
         <p className="text-gray-400 mb-2">
           <code>
-            import {'{'} useActionForm {'}'} from &apos;next-action-form&apos;
+            import {"{"} useActionForm {"}"} from &apos;hookform-action&apos;
           </code>
         </p>
         <p className="text-gray-400 mb-6">Bridges React Hook Form with a Next.js Server Action.</p>
@@ -124,7 +124,7 @@ export default function ApiReferencePage() {
         <h2 className="text-2xl font-bold mb-4 text-emerald-400">useActionForm (Standalone)</h2>
         <p className="text-gray-400 mb-2">
           <code>
-            import {'{'} useActionForm {'}'} from &apos;@next-action-form/standalone&apos;
+            import {"{"} useActionForm {"}"} from &apos;hookform-action-standalone&apos;
           </code>
         </p>
         <p className="text-gray-400 mb-6">
@@ -151,22 +151,19 @@ export default function ApiReferencePage() {
             <tbody className="text-gray-300">
               <tr className="border-b border-gray-800/50 bg-emerald-500/5">
                 <td className="py-3 pr-4 font-mono text-emerald-300">submit</td>
-                <td className="py-3 pr-4 font-mono text-xs">
-                  (data: T) =&gt; Promise&lt;TResult&gt;
-                </td>
+                <td className="py-3 pr-4 font-mono text-xs">(data: T) =&gt; Promise&lt;TResult&gt;</td>
                 <td className="py-3 text-gray-400">
-                  <strong>Required.</strong> The async function that handles form submission.
-                  Replaces the Server Action argument.
+                  <strong>Required.</strong> The async function that handles form submission. Replaces the Server Action
+                  argument.
                 </td>
               </tr>
             </tbody>
           </table>
         </div>
         <p className="text-gray-400 text-sm">
-          All other options (<code>defaultValues</code>, <code>schema</code>,{' '}
-          <code>validationMode</code>,<code>persistKey</code>, <code>optimisticKey</code>, etc.) are
-          identical to the Next.js version. The return type is the same except there is no{' '}
-          <code>formAction</code> property.
+          All other options (<code>defaultValues</code>, <code>schema</code>, <code>validationMode</code>,
+          <code>persistKey</code>, <code>optimisticKey</code>, etc.) are identical to the Next.js version. The return
+          type is the same except there is no <code>formAction</code> property.
         </p>
       </section>
 
@@ -175,13 +172,13 @@ export default function ApiReferencePage() {
         <h2 className="text-2xl font-bold mb-4 text-cyan-400">useActionFormCore</h2>
         <p className="text-gray-400 mb-2">
           <code>
-            import {'{'} useActionFormCore {'}'} from &apos;next-action-form/core&apos;
+            import {"{"} useActionFormCore {"}"} from &apos;hookform-action-core/core&apos;
           </code>
         </p>
         <p className="text-gray-400 mb-6">
           <span className="text-cyan-400 text-xs font-medium mr-1">v3</span>
-          Framework-agnostic core hook. Adapters (Next.js, standalone) wrap this. Use directly only
-          for building custom adapters.
+          Framework-agnostic core hook. Adapters (Next.js, standalone) wrap this. Use directly only for building custom
+          adapters.
         </p>
 
         <div className="code-block mb-6 text-gray-300">
@@ -257,18 +254,13 @@ export default function ApiReferencePage() {
                 <td className="py-3 pr-4 font-mono text-brand-300">formAction</td>
                 <td className="py-3 pr-4 font-mono text-xs">(FormData) =&gt; Promise</td>
                 <td className="py-3 text-gray-400">
-                  Next.js only. Direct form action for{' '}
-                  <code>&lt;form action=&#123;…&#125;&gt;</code>.
+                  Next.js only. Direct form action for <code>&lt;form action=&#123;…&#125;&gt;</code>.
                 </td>
               </tr>
               <tr className="border-b border-gray-800/50">
                 <td className="py-3 pr-4 font-mono text-brand-300">optimistic</td>
-                <td className="py-3 pr-4 font-mono text-xs">
-                  OptimisticState&lt;T&gt; | undefined
-                </td>
-                <td className="py-3 text-gray-400">
-                  Optimistic state with data, isPending, rollback().
-                </td>
+                <td className="py-3 pr-4 font-mono text-xs">OptimisticState&lt;T&gt; | undefined</td>
+                <td className="py-3 text-gray-400">Optimistic state with data, isPending, rollback().</td>
               </tr>
             </tbody>
           </table>
@@ -278,9 +270,7 @@ export default function ApiReferencePage() {
       {/* Form component */}
       <section className="mb-16">
         <h2 className="text-2xl font-bold mb-4 text-brand-400">&lt;Form /&gt;</h2>
-        <p className="text-gray-400 mb-6">
-          Headless wrapper providing RHF FormContext. Works with both adapters.
-        </p>
+        <p className="text-gray-400 mb-6">Headless wrapper providing RHF FormContext. Works with both adapters.</p>
 
         <div className="code-block mb-6 text-gray-300">
           <pre>{`<Form
@@ -306,12 +296,8 @@ export default function ApiReferencePage() {
             <tbody className="text-gray-300">
               <tr className="border-b border-gray-800/50">
                 <td className="py-3 pr-4 font-mono text-brand-300">form</td>
-                <td className="py-3 pr-4 font-mono text-xs">
-                  UseActionFormReturn | UseActionFormCoreReturn
-                </td>
-                <td className="py-3 text-gray-400">
-                  Return value from useActionForm (any adapter).
-                </td>
+                <td className="py-3 pr-4 font-mono text-xs">UseActionFormReturn | UseActionFormCoreReturn</td>
+                <td className="py-3 text-gray-400">Return value from useActionForm (any adapter).</td>
               </tr>
               <tr className="border-b border-gray-800/50">
                 <td className="py-3 pr-4 font-mono text-brand-300">onValid</td>
@@ -338,7 +324,7 @@ export default function ApiReferencePage() {
   loadPersistedValues,
   savePersistedValues,
   clearPersistedValues,
-} from 'next-action-form'
+} from 'hookform-action-core'
 
 const data = loadPersistedValues<MyForm>('my-key')
 savePersistedValues('my-key', { email: 'a@b.com' })
@@ -350,8 +336,8 @@ clearPersistedValues('my-key')`}</pre>
           Wraps a Server Action with Zod validation. The schema is auto-detected on the client.
         </p>
         <div className="code-block text-gray-300">
-          <pre>{`import { withZod } from 'next-action-form/with-zod'
-// or: import { withZod } from 'next-action-form/zod'
+          <pre>{`import { withZod } from 'hookform-action-core/with-zod'
+// or: import { withZod } from 'hookform-action-core/zod'
 
 const action = withZod(schema, async (data) => {
   // data is fully typed
@@ -361,7 +347,7 @@ const action = withZod(schema, async (data) => {
 
         <h3 className="text-lg font-semibold mb-3 mt-8">defaultErrorMapper</h3>
         <div className="code-block text-gray-300">
-          <pre>{`import { defaultErrorMapper } from 'next-action-form'
+          <pre>{`import { defaultErrorMapper } from 'hookform-action-core'
 
 const customMapper = (result) => {
   const zodErrors = defaultErrorMapper(result)
@@ -377,8 +363,7 @@ const customMapper = (result) => {
         <h2 className="text-2xl font-bold mb-4 text-cyan-400">Plugin System (Internal)</h2>
         <p className="text-gray-400 mb-6">
           <span className="text-cyan-400 text-xs font-medium mr-1">v3</span>
-          Internal plugin architecture for extending useActionFormCore. Not yet part of the public
-          API.
+          Internal plugin architecture for extending useActionFormCore. Not yet part of the public API.
         </p>
 
         <div className="code-block mb-6 text-gray-300">
@@ -408,9 +393,7 @@ const customMapper = (result) => {
               </tr>
               <tr className="border-b border-gray-800/50">
                 <td className="py-3 pr-4 font-mono text-cyan-300">onSuccess</td>
-                <td className="py-3 text-gray-400">
-                  After successful submission (no field errors).
-                </td>
+                <td className="py-3 text-gray-400">After successful submission (no field errors).</td>
               </tr>
               <tr className="border-b border-gray-800/50">
                 <td className="py-3 pr-4 font-mono text-cyan-300">onError</td>
@@ -418,9 +401,7 @@ const customMapper = (result) => {
               </tr>
               <tr className="border-b border-gray-800/50">
                 <td className="py-3 pr-4 font-mono text-cyan-300">onMount</td>
-                <td className="py-3 text-gray-400">
-                  On mount. Return cleanup function for unmount.
-                </td>
+                <td className="py-3 text-gray-400">On mount. Return cleanup function for unmount.</td>
               </tr>
             </tbody>
           </table>
@@ -441,24 +422,22 @@ const customMapper = (result) => {
             </thead>
             <tbody className="text-gray-300">
               <tr className="border-b border-gray-800/50">
-                <td className="py-3 pr-4 font-mono text-brand-300">next-action-form</td>
+                <td className="py-3 pr-4 font-mono text-brand-300">hookform-action-core</td>
                 <td className="py-3 pr-4 font-mono text-xs">3.0.0</td>
                 <td className="py-3 text-gray-400">Core + Next.js adapter (backward-compatible)</td>
               </tr>
               <tr className="border-b border-gray-800/50">
-                <td className="py-3 pr-4 font-mono text-emerald-300">@next-action-form/next</td>
+                <td className="py-3 pr-4 font-mono text-emerald-300">hookform-action</td>
                 <td className="py-3 pr-4 font-mono text-xs">3.0.0</td>
                 <td className="py-3 text-gray-400">Standalone Next.js adapter package</td>
               </tr>
               <tr className="border-b border-gray-800/50">
-                <td className="py-3 pr-4 font-mono text-emerald-300">
-                  @next-action-form/standalone
-                </td>
+                <td className="py-3 pr-4 font-mono text-emerald-300">hookform-action-standalone</td>
                 <td className="py-3 pr-4 font-mono text-xs">3.0.0</td>
                 <td className="py-3 text-gray-400">Adapter for Vite, Remix, Astro, SPAs</td>
               </tr>
               <tr className="border-b border-gray-800/50">
-                <td className="py-3 pr-4 font-mono text-purple-300">@next-action-form/devtools</td>
+                <td className="py-3 pr-4 font-mono text-purple-300">hookform-action-devtools</td>
                 <td className="py-3 pr-4 font-mono text-xs">3.0.0</td>
                 <td className="py-3 text-gray-400">Floating debug panel (FormDevTool)</td>
               </tr>
@@ -471,5 +450,5 @@ const customMapper = (result) => {
         <p>MIT License · Built with ♥ for the React community</p>
       </footer>
     </div>
-  )
+  );
 }

@@ -1,16 +1,16 @@
-// @next-action-form/standalone – public API (v3)
+// hookform-action-standalone – public API (v3)
 // ---------------------------------------------------------------------------
 // Standalone adapter for React apps without Next.js.
 // Use with Vite, Remix, Astro, or any React SPA.
 // ---------------------------------------------------------------------------
 
 // Standalone adapter hook
-export { useActionForm } from './use-action-form'
+export { useActionForm } from "./use-action-form";
 export type {
   StandaloneSubmitFunction,
   UseStandaloneActionFormOptions,
   UseStandaloneActionFormReturn,
-} from './use-action-form'
+} from "./use-action-form";
 
 // Re-export core utilities for convenience
 export {
@@ -41,4 +41,4 @@ export {
   clearPersistedValues,
   // React shim
   hasUseOptimistic,
-} from 'next-action-form'
+} from "hookform-action-core";

@@ -1,11 +1,11 @@
-// @next-action-form/next – public API (v3)
+// hookform-action – public API (v3)
 // ---------------------------------------------------------------------------
 // Next.js adapter. Re-exports the core API plus the Next-specific
 // useActionForm that handles Server Actions, FormData, and formAction.
 // ---------------------------------------------------------------------------
 
 // Next.js-specific adapter hook
-export { useActionForm } from './use-action-form'
+export { useActionForm } from "./use-action-form";
 
 // Re-export everything from core for convenience
 export {
@@ -47,4 +47,4 @@ export {
   type InferActionResult,
   type UseActionFormOptions,
   type UseActionFormReturn,
-} from 'next-action-form'
+} from "hookform-action-core";

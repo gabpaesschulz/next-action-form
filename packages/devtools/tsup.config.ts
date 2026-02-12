@@ -6,7 +6,7 @@ export default defineConfig({
   dts: true,
   sourcemap: true,
   clean: true,
-  external: ["react", "react-dom", "react-hook-form", "next-action-form"],
+  external: ["react", "react-dom", "react-hook-form", "hookform-action-core"],
   treeshake: true,
   splitting: false,
   minify: false,

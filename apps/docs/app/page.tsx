@@ -9,14 +9,14 @@ export default function HomePage() {
           <span>Framework-Agnostic</span>
         </div>
         <h1 className="text-5xl sm:text-6xl font-extrabold tracking-tight mb-6">
-          React Hook Form{' '}
+          React Hook Form{" "}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-cyan-400">
             for every React stack
           </span>
         </h1>
         <p className="text-xl text-gray-400 max-w-2xl mx-auto mb-10">
-          From Next.js Server Actions to Vite SPAs — automatic Zod error mapping, optimistic UI,
-          client-side validation, multi-step persistence, and a beautiful DevTools panel.
+          From Next.js Server Actions to Vite SPAs — automatic Zod error mapping, optimistic UI, client-side validation,
+          multi-step persistence, and a beautiful DevTools panel.
         </p>
         <div className="flex justify-center gap-4">
           <a
@@ -47,19 +47,13 @@ export default function HomePage() {
           <div>
             <p className="text-sm text-gray-400 mb-2 text-center">Next.js (Server Actions)</p>
             <div className="code-block text-center">
-              <code className="text-green-400">
-                npm install next-action-form react-hook-form zod
-              </code>
+              <code className="text-green-400">npm install hookform-action react-hook-form zod</code>
             </div>
           </div>
           <div>
-            <p className="text-sm text-gray-400 mb-2 text-center">
-              Vite / Remix / Astro (Standalone)
-            </p>
+            <p className="text-sm text-gray-400 mb-2 text-center">Vite / Remix / Astro (Standalone)</p>
             <div className="code-block text-center">
-              <code className="text-green-400">
-                npm install @next-action-form/standalone react-hook-form zod
-              </code>
+              <code className="text-green-400">npm install hookform-action-standalone react-hook-form zod</code>
             </div>
           </div>
         </div>
@@ -73,33 +67,32 @@ export default function HomePage() {
             <div className="text-3xl mb-3">🌍</div>
             <h3 className="text-lg font-semibold mb-2">Framework-Agnostic Core</h3>
             <p className="text-gray-400 text-sm">
-              The core logic no longer depends on Next.js. Use{' '}
-              <code>@next-action-form/standalone</code> with Vite, Remix, Astro, or any React app.
+              The core logic no longer depends on Next.js. Use <code>hookform-action-standalone</code> with Vite, Remix,
+              Astro, or any React app.
             </p>
           </div>
           <div className="bg-gradient-to-br from-purple-500/10 to-pink-500/10 border border-purple-500/20 rounded-xl p-6">
             <div className="text-3xl mb-3">🔍</div>
             <h3 className="text-lg font-semibold mb-2">DevTools Panel</h3>
             <p className="text-gray-400 text-sm">
-              <code>@next-action-form/devtools</code> — a floating debug panel showing form state,
-              submission history, and debug actions. Inspired by TanStack Query DevTools.
+              <code>hookform-action-devtools</code> — a floating debug panel showing form state, submission history, and
+              debug actions. Inspired by TanStack Query DevTools.
             </p>
           </div>
           <div className="bg-gradient-to-br from-brand-500/10 to-cyan-500/10 border border-brand-500/20 rounded-xl p-6">
             <div className="text-3xl mb-3">🧩</div>
             <h3 className="text-lg font-semibold mb-2">Plugin System (Internal)</h3>
             <p className="text-gray-400 text-sm">
-              An internal plugin architecture with lifecycle hooks (<code>onBeforeSubmit</code>,
-              <code>onSuccess</code>, <code>onError</code>, <code>onMount</code>) powering future
-              extensibility.
+              An internal plugin architecture with lifecycle hooks (<code>onBeforeSubmit</code>,<code>onSuccess</code>,{" "}
+              <code>onError</code>, <code>onMount</code>) powering future extensibility.
             </p>
           </div>
           <div className="bg-gradient-to-br from-brand-500/10 to-cyan-500/10 border border-brand-500/20 rounded-xl p-6">
             <div className="text-3xl mb-3">🔄</div>
             <h3 className="text-lg font-semibold mb-2">Zero Breaking Changes</h3>
             <p className="text-gray-400 text-sm">
-              Existing <code>next-action-form</code> v2 imports work exactly the same. The Next.js
-              adapter is 100% backward-compatible.
+              Existing <code>hookform-action</code> v2 imports work exactly the same. The Next.js adapter is 100%
+              backward-compatible.
             </p>
           </div>
         </div>
@@ -110,16 +103,16 @@ export default function HomePage() {
         <h2 className="text-2xl font-bold mb-6 text-center">Architecture</h2>
         <div className="code-block text-gray-300 text-center leading-loose">
           <pre>{`┌─────────────────────────────────────────────┐
-│           next-action-form (core)           │
+│        hookform-action-core (core)           │
 │   useActionFormCore · withZod · Form · persist │
 ├────────────────────┬────────────────────────┤
-│  @next-action-form │  @next-action-form     │
-│       /next        │    /standalone          │
+│  hookform-action   │  hookform-action       │
+│    (Next.js)       │    -standalone         │
 │  (Server Actions)  │  (fetch / REST / gRPC)  │
 └────────────────────┴────────────────────────┘
           ┌──────────────────────┐
-          │ @next-action-form    │
-          │     /devtools        │
+          │ hookform-action    │
+          │     -devtools      │
           │  (FormDevTool panel) │
           └──────────────────────┘`}</pre>
         </div>
@@ -129,34 +122,34 @@ export default function HomePage() {
       <section className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
         {[
           {
-            icon: '🔒',
-            title: 'Type-Safe',
-            desc: 'Full TypeScript inference from your action — zero manual typing.',
+            icon: "🔒",
+            title: "Type-Safe",
+            desc: "Full TypeScript inference from your action — zero manual typing.",
           },
           {
-            icon: '⚡',
-            title: 'Auto Error Mapping',
-            desc: 'Zod validation errors mapped to RHF fields automatically.',
+            icon: "⚡",
+            title: "Auto Error Mapping",
+            desc: "Zod validation errors mapped to RHF fields automatically.",
           },
           {
-            icon: '💾',
-            title: 'Wizard Persistence',
-            desc: 'Multi-step forms with sessionStorage persistence, debounced and SSR-safe.',
+            icon: "💾",
+            title: "Wizard Persistence",
+            desc: "Multi-step forms with sessionStorage persistence, debounced and SSR-safe.",
           },
           {
-            icon: '🚀',
-            title: 'Optimistic UI',
-            desc: 'Native useOptimistic integration. Instant UI updates with automatic rollback.',
+            icon: "🚀",
+            title: "Optimistic UI",
+            desc: "Native useOptimistic integration. Instant UI updates with automatic rollback.",
           },
           {
-            icon: '📦',
-            title: 'Tiny Bundle',
-            desc: 'ESM + CJS via tsup. Tree-shakeable. React, RHF, and Zod are peer deps.',
+            icon: "📦",
+            title: "Tiny Bundle",
+            desc: "ESM + CJS via tsup. Tree-shakeable. React, RHF, and Zod are peer deps.",
           },
           {
-            icon: '🧪',
-            title: 'Fully Tested',
-            desc: '81+ tests covering core, adapters, plugins, persistence, and optimistic UI.',
+            icon: "🧪",
+            title: "Fully Tested",
+            desc: "81+ tests covering core, adapters, plugins, persistence, and optimistic UI.",
           },
         ].map((f) => (
           <div
@@ -173,14 +166,12 @@ export default function HomePage() {
       {/* Usage – Next.js */}
       <section className="mb-20">
         <h2 className="text-2xl font-bold mb-2 text-center">Usage — Next.js</h2>
-        <p className="text-gray-400 text-sm text-center mb-6">
-          Works exactly like v2. No changes required.
-        </p>
+        <p className="text-gray-400 text-sm text-center mb-6">Works exactly like v2. No changes required.</p>
         <div className="code-block text-gray-300 leading-relaxed">
           <pre>{`// actions.ts — Server Action
 'use server'
 import { z } from 'zod'
-import { withZod } from 'next-action-form/with-zod'
+import { withZod } from 'hookform-action-core/with-zod'
 
 const schema = z.object({
   email: z.string().email(),
@@ -193,7 +184,7 @@ export const loginAction = withZod(schema, async (data) => {
 
 // LoginForm.tsx — Client Component
 'use client'
-import { useActionForm } from 'next-action-form'
+import { useActionForm } from 'hookform-action'
 import { loginAction } from './actions'
 
 export function LoginForm() {
@@ -225,7 +216,7 @@ export function LoginForm() {
           Same API, pass <code>submit</code> instead of a Server Action.
         </p>
         <div className="code-block text-gray-300 leading-relaxed">
-          <pre>{`import { useActionForm } from '@next-action-form/standalone'
+          <pre>{`import { useActionForm } from 'hookform-action-standalone'
 import { z } from 'zod'
 
 const schema = z.object({
@@ -271,7 +262,7 @@ export function LoginForm() {
           Add a floating panel to inspect form state in development.
         </p>
         <div className="code-block text-gray-300 leading-relaxed">
-          <pre>{`import { FormDevTool } from '@next-action-form/devtools'
+          <pre>{`import { FormDevTool } from 'hookform-action-devtools'
 
 function App() {
   const form = useActionForm(/* ... */)
@@ -292,5 +283,5 @@ function App() {
         <p>MIT License · Built with ♥ for the React community</p>
       </footer>
     </div>
-  )
+  );
 }

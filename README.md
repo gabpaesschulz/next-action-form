@@ -1,5 +1,5 @@
 <p align="center">
-  <h1 align="center">⚡ next-action-form</h1>
+  <h1 align="center">⚡ hookform-action</h1>
   <p align="center">
     Seamless integration between <strong>React Hook Form</strong> and <strong>any React framework</strong><br />
     with Zod validation, automatic type inference, optimistic UI, multi-step persistence, and DevTools.
@@ -7,10 +7,10 @@
 </p>
 
 <p align="center">
-  <a href="https://www.npmjs.com/package/next-action-form"><img src="https://img.shields.io/npm/v/next-action-form?style=flat-square&color=5c7cfa" alt="npm version" /></a>
-  <a href="https://www.npmjs.com/package/next-action-form"><img src="https://img.shields.io/npm/dm/next-action-form?style=flat-square&color=748ffc" alt="npm downloads" /></a>
-  <a href="https://github.com/gabpaesschulz/next-action-form/actions"><img src="https://img.shields.io/github/actions/workflow/status/gabpaesschulz/next-action-form/ci.yml?style=flat-square" alt="CI" /></a>
-  <a href="https://github.com/gabpaesschulz/next-action-form/blob/main/LICENSE"><img src="https://img.shields.io/npm/l/next-action-form?style=flat-square" alt="license" /></a>
+  <a href="https://www.npmjs.com/package/hookform-action-core"><img src="https://img.shields.io/npm/v/hookform-action-core?style=flat-square&color=5c7cfa" alt="npm version" /></a>
+  <a href="https://www.npmjs.com/package/hookform-action-core"><img src="https://img.shields.io/npm/dm/hookform-action-core?style=flat-square&color=748ffc" alt="npm downloads" /></a>
+  <a href="https://github.com/gabpaesschulz/hookform-action/actions"><img src="https://img.shields.io/github/actions/workflow/status/gabpaesschulz/hookform-action/ci.yml?style=flat-square" alt="CI" /></a>
+  <a href="https://github.com/gabpaesschulz/hookform-action/blob/main/LICENSE"><img src="https://img.shields.io/npm/l/hookform-action-core?style=flat-square" alt="license" /></a>
 </p>
 
 ---
@@ -19,24 +19,24 @@
 
 Connecting React Hook Form with server-side actions requires tons of boilerplate: manual FormData conversion, error mapping, state management, and type juggling.
 
-**next-action-form** solves this in one hook — for **Next.js Server Actions**, **Vite SPAs**, **Remix**, **Astro**, or any React app.
+**hookform-action** solves this in one hook — for **Next.js Server Actions**, **Vite SPAs**, **Remix**, **Astro**, or any React app.
 
 ## Packages
 
-| Package                                               | Description                                          |
-| ----------------------------------------------------- | ---------------------------------------------------- |
-| [`next-action-form`](packages/core)                   | Core library + Next.js adapter (backward-compatible) |
-| [`@next-action-form/next`](packages/next)             | Standalone Next.js adapter                           |
-| [`@next-action-form/standalone`](packages/standalone) | Adapter for Vite, Remix, Astro, SPAs                 |
-| [`@next-action-form/devtools`](packages/devtools)     | Floating debug panel (FormDevTool)                   |
+| Package                                             | Description                          |
+| --------------------------------------------------- | ------------------------------------ |
+| [`hookform-action-core`](packages/core)             | Core library (framework-agnostic)    |
+| [`hookform-action`](packages/next)                  | Next.js adapter (⭐ main install)    |
+| [`hookform-action-standalone`](packages/standalone) | Adapter for Vite, Remix, Astro, SPAs |
+| [`hookform-action-devtools`](packages/devtools)     | Floating debug panel (FormDevTool)   |
 
 ## What's New in v3
 
 - 🌍 **Framework-Agnostic Core** — Core decoupled from Next.js. Use with any React framework
-- 🚀 **Standalone Adapter** — `@next-action-form/standalone` for Vite, Remix, Astro, or any React SPA
-- 🔍 **DevTools Panel** — `@next-action-form/devtools` for real-time form state inspection
+- 🚀 **Standalone Adapter** — `hookform-action-standalone` for Vite, Remix, Astro, or any React SPA
+- 🔍 **DevTools Panel** — `hookform-action-devtools` for real-time form state inspection
 - 🧩 **Internal Plugin System** — Lifecycle hooks (`onBeforeSubmit`, `onSuccess`, `onError`, `onMount`)
-- 🔄 **Zero Breaking Changes** — Existing `next-action-form` v2 imports work identically
+- 🔄 **Zero Breaking Changes** — Existing `hookform-action` imports work identically
 
 ## Features
 
@@ -54,19 +54,19 @@ Connecting React Hook Form with server-side actions requires tons of boilerplate
 ### Next.js (Server Actions)
 
 ```bash
-npm install next-action-form react-hook-form zod
+npm install hookform-action react-hook-form zod
 ```
 
 ### Vite / Remix / Astro (Standalone)
 
 ```bash
-npm install @next-action-form/standalone react-hook-form zod
+npm install hookform-action-standalone react-hook-form zod
 ```
 
 ### DevTools (optional)
 
 ```bash
-npm install @next-action-form/devtools
+npm install hookform-action-devtools
 ```
 
 ## Quick Start — Next.js
@@ -77,7 +77,7 @@ npm install @next-action-form/devtools
 // app/actions.ts
 "use server";
 import { z } from "zod";
-import { withZod } from "next-action-form/with-zod";
+import { withZod } from "hookform-action-core/with-zod";
 
 const schema = z.object({
   email: z.string().email(),
@@ -95,7 +95,7 @@ export const loginAction = withZod(schema, async (data) => {
 ```tsx
 // app/login-form.tsx
 "use client";
-import { useActionForm } from "next-action-form";
+import { useActionForm } from "hookform-action";
 import { loginAction } from "./actions";
 
 export function LoginForm() {
@@ -125,7 +125,7 @@ export function LoginForm() {
 ## Quick Start — Standalone (Vite, Remix, etc.)
 
 ```tsx
-import { useActionForm } from "@next-action-form/standalone";
+import { useActionForm } from "hookform-action-standalone";
 import { z } from "zod";
 
 const schema = z.object({
@@ -171,7 +171,7 @@ export function LoginForm() {
 Add a floating debug panel to inspect form state, submission history, and errors:
 
 ```tsx
-import { FormDevTool } from "@next-action-form/devtools";
+import { FormDevTool } from "hookform-action-devtools";
 
 function App() {
   const form = useActionForm(/* ... */);
@@ -240,16 +240,16 @@ const form = useActionForm(wizardAction, {
 
 ```
 ┌─────────────────────────────────────────────┐
-│           next-action-form (core)           │
+│        hookform-action-core (core)           │
 │   useActionFormCore · withZod · Form · persist │
 ├────────────────────┬────────────────────────┤
-│  @next-action-form │  @next-action-form     │
-│       /next        │    /standalone          │
+│   hookform-action  │  hookform-action       │
+│    (Next.js)       │    -standalone         │
 │  (Server Actions)  │  (fetch / REST / gRPC)  │
 └────────────────────┴────────────────────────┘
           ┌──────────────────────┐
-          │ @next-action-form    │
-          │     /devtools        │
+          │ hookform-action    │
+          │     -devtools      │
           │  (FormDevTool panel) │
           └──────────────────────┘
 ```
@@ -303,8 +303,8 @@ Everything from RHF's `useForm`, plus:
 
 New capabilities:
 
-1. Use `@next-action-form/standalone` for non-Next.js apps
-2. Add `@next-action-form/devtools` for debugging
+1. Use `hookform-action-standalone` for non-Next.js apps
+2. Add `hookform-action-devtools` for debugging
 3. Access `useActionFormCore` for building custom adapters
 
 ### v1 → v2
@@ -330,14 +330,14 @@ New capabilities:
 - React 18+ (React 19 recommended for optimistic UI)
 - React Hook Form 7.50+
 - Zod 3.22+ (optional)
-- Next.js 14+ (for `next-action-form` / `@next-action-form/next`)
+- Next.js 14+ (for `hookform-action`)
 
 ## Development
 
 ```bash
 # Clone and install
-git clone https://github.com/gabpaesschulz/next-action-form.git
-cd next-action-form
+git clone https://github.com/gabpaesschulz/hookform-action.git
+cd hookform-action
 pnpm install
 
 # Dev (core + docs)
@@ -355,4 +355,4 @@ pnpm changeset
 
 ## License
 
-[MIT](LICENSE) © next-action-form contributors
+[MIT](LICENSE) © hookform-action contributors
